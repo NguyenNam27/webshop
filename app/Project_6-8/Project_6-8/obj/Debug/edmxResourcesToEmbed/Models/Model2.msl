@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="XAY_DUNG1ModelStoreContainer" CdmEntityContainer="EntityDBEntities">
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="XAY_DUNG1Model.Project">
+        <MappingFragment StoreEntitySet="Project">
+          <ScalarProperty Name="ID_Project" ColumnName="ID_Project" />
+          <ScalarProperty Name="Name_Project" ColumnName="Name_Project" />
+          <ScalarProperty Name="Detail_Project" ColumnName="Detail_Project" />
+          <ScalarProperty Name="Image_Project" ColumnName="Image_Project" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

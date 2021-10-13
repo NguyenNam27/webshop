@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="XAY_DUNG1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'XAY_DUNG1.dbo.Project' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ID_Project" />
+      <PropertyRef Name="Name_Project" />
+      <PropertyRef Name="Detail_Project" />
+      <PropertyRef Name="Image_Project" />
+    </Key>
+    <Property Name="ID_Project" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Project" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Detail_Project" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Image_Project" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="XAY_DUNG1ModelStoreContainer">
+    <EntitySet Name="Project" EntityType="Self.Project" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Project].[ID_Project] AS [ID_Project], 
+    [Project].[Name_Project] AS [Name_Project], 
+    [Project].[Detail_Project] AS [Detail_Project], 
+    [Project].[Image_Project] AS [Image_Project]
+    FROM [dbo].[Project] AS [Project]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

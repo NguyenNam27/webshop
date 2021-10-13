@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Project_6_8.Models.Project>
+
+@{
+    ViewBag.Title = "Index";
+}
+<nav class="gtco-nav" role="navigation">
+    <div class="gtco-container">
+        <div class="row">
+            <div class="col-sm-2 col-xs-12">
+                <div id="gtco-logo">@Html.ActionLink("Beryllium", "Index", "Home")</div>
+            </div>
+            <div class="col-xs-10 text-right menu-1" id="mydiv" runat="server">
+                <ul>
+                    <li>
+                        @Html.ActionLink("Trang chủ", "Index", "Home")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Liên hệ", "Contact", "Home")
+                    </li>
+                    <li class="active">
+                        @Html.ActionLink("Dự Án", "Project", "Home")
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</nav>
+
+<div class="wrapper" style="text-align:center;margin:auto">
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn_primary" })
+</div>
+<section class="htc__latest__project__area ptb--150 bg__white">
+    <div class="container">
+        <div class="row">
+            <div class="htc__latest__project__wrap clearfix">
+                <!-- Start Single Project -->
+                @{foreach (var item in Model)
+                    {
+                        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                            <div class="project foo" data-dr-id="1" style="visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.8s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; ">
+                                <div class="project__thumb">
+                                    <a href="/Projects/Details/@item.ID_Project">
+                                        <img src="@item.Image_Project" alt="project images">
+                                    </a>
+                                    <div class="project__hover__info">
+                                        <div class="project__action">
+                                            <h2><a href="/Projects/Details/@item.ID_Project">@item.Name_Project</a></h2>
+                                            <h4>@item.Detail_Project</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                <!-- End Single Project -->
+            </div>
+        </div>
+    </div>
+</section>
+    </table>

@@ -1,0 +1,81 @@
+﻿@model Project_6_8.Models.Project
+
+@{
+    ViewBag.Title = "Details";
+}
+<nav class="gtco-nav" role="navigation">
+    <div class="gtco-container">
+        <div class="row">
+            <div class="col-sm-2 col-xs-12">
+                <div id="gtco-logo">@Html.ActionLink("Beryllium", "Index", "Home")</div>
+            </div>
+            <div class="col-xs-10 text-right menu-1" id="mydiv" runat="server">
+                <ul>
+                    <li>
+                        @Html.ActionLink("Trang chủ", "Index", "Home")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Liên hệ", "Contact", "Home")
+                    </li>
+                    <li class="active">
+                        @Html.ActionLink("Dự Án", "Project", "Home")
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</nav>
+<section class="htc__project__details__page ptb--150 bg__white">
+    <div class="container">
+        <div class="row">
+                <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                    <div class="htc__single__service">
+                        <div class="htc__single__service__tab">
+                            <div class="ht-portfolio-pic-show">
+                                <div class="ht-portfolio-full-image tab-content">
+                                    <div role="tabpanel" class="tab-pane fade in active" id="img-tab-1">
+                                        <img src="@Model.Image_Project" alt="full-image" style="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="single__project__rightsidebar">
+                        <!-- Start Single Item -->
+                        <div class="pro__dtl__inner bg__gray">
+                            <h2>PROJECT DETAILS</h2>
+                            <div class="pro__dtl__content">
+                                <ul class="pro__dtl__list font__bold">
+                                    <li>TÊN :</li>
+                                    <li>NƠI THI CÔNG :</li>
+                                    <li>DẠNG CÔNG TRÌNH :</li>
+                                </ul>
+                                <ul class="pro__dtl__list">
+                                    <li> @Html.DisplayFor(model => model.Name_Project)</li>
+                                    <li> @Html.DisplayFor(model => model.Detail_Project)</li>
+                                    @if (Model.Type_Project == null)
+                                    {
+                                        <li>CONSTRUCTION</li>
+                                    }
+                                    else
+                                    {
+                                        <li> @Html.DisplayFor(model => model.Type_Project)</li>
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+                        <p>
+                            @Html.ActionLink("Edit", "Edit", new { id = Model.ID_Project }, new { @class = "btn btn_primary" }) 
+                            @Html.ActionLink("Delete", "Delete", new { id = Model.ID_Project }, new { @class = "btn btn_primary" }) 
+                            @Html.ActionLink("Back to List", "Index", null,new { @class = "btn btn_primary" })
+                        </p>
+                        <!-- End Single Item -->
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
